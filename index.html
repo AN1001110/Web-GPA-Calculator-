@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="css/normalize.css"
+      type="text/css"
+      media="all"
+    />
+    <!-- work sans font form google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    />
+    <!--font awesome library-->
+    <link rel="stylesheet" href="css/all.min.css" type="text/css" media="all" />
+    <!--  Main Template css file-->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <!--     render all elements normally -->
+    <title>GPA Calculator</title>
+  </head>
+  <body>
+    <!-- start header -->
+    <header>
+      <div class="container">
+        <img class="logo" src="images/logo.png" alt="Not Found" />
+        <span>
+          <i class="fa-solid fa-bars bar1"></i>
+          <ul class="list">
+            <li>
+              <a href="#home"
+                ><i class="fa-solid fa-house"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#services"
+                ><i class="fa-solid fa-gear"></i><span>Services</span></a
+              >
+            </li>
+            <li>
+              <a href="#about"
+                ><i class="fa-regular fa-address-card"></i><span>About</span></a
+              >
+            </li>
+            <li>
+              <a href="#contact"
+                ><i class="fa-solid fa-phone"></i><span>Contact Us</span></a
+              >
+            </li>
+          </ul>
+        </span>
+      </div>
+    </header>
+    <!-- end header -->
+    <!-- start section  -->
+    <section>
+      <div class="gpa">GPA Calculator</div>
+      <div class="container">
+        <form>
+          <div id="GradesAndCreditsDiv"></div>
+          <div class="btns">
+            <input type="submit" value="calc" class="btn" />
+            <input type="reset" value="Rest" id="rest" />
+            <input type="button" value="Add" id="add" />
+            <input type="button" value="Delete" id="delete" />
+          </div>
+          <div id="result"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- End section  -->
+
+    <!-- Start footer -->
+    <footer>
+      <div>Designed By AN</div>
+      <div class="copyright"></div>
+    </footer>
+    <!-- End footer -->
+    <script src="js/main.js" type="module"></script>
+    <script src="js/functions.js" type="module"></script>
+    <!-- <script src="js/funcOop.js"  type="module"></script> -->
+  </body>
+</html>
