@@ -142,7 +142,7 @@ class Ui {
     DeleteBtn.onclick = function () {
       let ChildrenCount = GradesAndCreditsDiv.children.length;
      let deletedElement = document.getElementById(`sub${ChildrenCount}`)
-      deletedElement.remove()
+     GradesAndCreditsDiv.children.length > 0 ? deletedElement.remove() : null
     };
   }
   static RestButton() {
