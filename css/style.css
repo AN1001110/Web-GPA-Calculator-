@@ -6,19 +6,25 @@
 }
 
 :root {
-  --colorOne: #ff8a08;
-  --colorTwo: #ffc100;
-  --colorThree: #ff6500;
-  --colorFour: #c40c0c;
-  --bodyColorOne: #f0f0f0;
-  --bodyColorTwo: #ff4500;
-  --bodyColorThree: #8b0000;
+  --headColor1: #034001;
+  --headColor2: #055902;
+  --headColor3: #078c03;
+  --footColor1: #059212;
+  --footColor2: #9bec00;
+  --inputPadding :20px;
 }
+
 header .container {
   display: flex;
   justify-content: space-between;
   padding: 15px;
-  background-image: linear-gradient(45deg, red, var(--colorFour), darkred);
+  background-image: linear-gradient(
+    45deg,
+    var(--headColor1) 30%,
+    var(--headColor2) 60%,
+    var(--headColor3) 100%
+  );
+
   align-items: center;
   height: 40px;
   width: 100%;
@@ -27,8 +33,8 @@ header .container {
   overflow: visible;
 }
 .logo {
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
 }
 @media (max-width: 667px) {
 }
@@ -61,47 +67,92 @@ header .list {
   margin-left: 5px;
 }
 /* start section */
-section .gpa {
-  background-image: linear-gradient(
-    45deg,
-    var(--colorTwo),
-    var(--colorOne),
-    var(--colorThree)
-  );
-  padding: 12px;
-  color: white;
-  display: flex;
-  font-size: 20px;
-  font-style: italic;
-  font-weight: bold;
-  justify-content: center;
-  letter-spacing: -1px;
-  text-shadow: 4px 4px 2px var(--colorFour);
-}
-section .container form {
-  padding: 10px;
-  background-image: linear-gradient(120deg,var(--bodyColorOne), var(--bodyColorTwo),var(--bodyColorThree));
+section {
+  background-image: url("../images/mainBackground.jpg");
   background-size: cover;
+}
+section .container {
   height: 100vh;
 }
-/* start frame work */
-.flex {
+section .container form {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  text-align: center;
-  align-items: center;
+  padding: 10px;
+  height: fit-content;
+  width: 100%;
 }
-.three-width {
-  width: calc(100% / 3);
-}
-/* end frame work */
-section .container input:focus {
+
+section .container form input:focus {
   outline: none;
 }
+section .container input {
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  outline: none;
+  border:solid  var(--headColor3) 2px ;
+}
+section .container input[type="number"] {
+  padding-top: var(--inputPadding);
+  padding-bottom:var(--inputPadding) ;
+  margin-bottom: 2px;
+  height: 20px;
+  width: calc(50% - 5px);
+  padding: 10px;
+}
+section .container input[type="text"] {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 2px;
+}
+section .container input[type="button"]{
+  padding: 10px;
+  border: none;
+}
+
+#GradesAndCreditsDiv{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+#calc{
+  background-color: #FF8C42;
+  color: white;
+}
 /* end section */
+
+/* start framework */
+.filed {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.column {
+  flex-direction: column;
+}
+.two-width {
+  width: calc(100% / 2 );
+}
+.full-width {
+  width: 100%;
+}
+.grow {
+  flex-grow: 1;
+}
+/* end frame work */
 /* start copyright */
 footer {
-  background-image: linear-gradient(45deg, red, var(--colorFour), darkred);
+  background-image: linear-gradient(
+    45deg,
+    var(--footColor1),
+    var(--footColor2)
+  );
   color: white;
   display: flex;
   flex-wrap: wrap;
