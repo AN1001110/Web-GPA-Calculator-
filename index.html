@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta name="description" content="GPA calc">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -59,23 +60,21 @@
     <!-- end header -->
     <!-- start section  -->
     <section>
-      <div class="gpa">GPA Calculator</div>
+     
       <div class="container">
         <form>
           <div id="GradesAndCreditsDiv"></div>
-          <div class="btns">
-            <input type="submit" value="calc" class="btn" />
-            <input type="reset" value="Rest" id="rest" />
-            <input type="button" value="Add" id="add" />
-            <input type="button" value="Delete" id="delete" />
-          </div>
-          <div id="result"></div>
         </form>
+        <div class="btns">
+          <input type="button" value="calc" id="calc" />
+          <input type="button" value="Rest" id="rest" />
+          <input type="button" value="Add" id="add" />
+          <input type="button" value="Delete" id="delete" />
+        </div>
+        <div id="result"></div>
       </div>
     </section>
-
     <!-- End section  -->
-
     <!-- Start footer -->
     <footer>
       <div>Designed By AN</div>
@@ -83,7 +82,6 @@
     </footer>
     <!-- End footer -->
     <script src="js/main.js" type="module"></script>
-    <script src="js/functions.js" type="module"></script>
-    <!-- <script src="js/funcOop.js"  type="module"></script> -->
+    <script src="js/funcOop.js"  type="module"></script>
   </body>
 </html>
