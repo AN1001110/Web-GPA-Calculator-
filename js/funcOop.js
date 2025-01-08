@@ -70,8 +70,6 @@ class GradesAndGPAcalc {
           totalGPA += 1 * credit;
         }
       }
-      console.log();
-
       this.Percentage =
         totalCredits > 0 ? (totalPoints / totalCredits).toFixed(2) : 0;
       this.GPA = totalCredits > 0 ? (totalGPA / totalCredits).toFixed(2) : 0;
@@ -101,6 +99,8 @@ class GradesAndGPAcalc {
       this.Grade = "D";
     } else if (this.GPA >= 1) {
       this.Grade = "D-";
+    } else if (this.GPA <= 0) {
+      this.Grade = "F";
     }
   }
 }
@@ -147,7 +147,7 @@ class Ui {
     function ShowResults() {
       if (calc.state) {
         let result = document.getElementById("result");
-        result.innerHTML = `<div>Percentage: ${calc.Percentage}%</div>
+        result.innerHTML = `<div>Percentage: %${calc.Percentage}</div>
         <div>Grade: ${calc.Grade}</div>
         <div>GPA: ${calc.GPA}</div>`;
       }
