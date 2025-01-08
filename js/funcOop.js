@@ -112,7 +112,7 @@ class Ui {
     element.id = `sub${ChildrenCount + 1}`;
     element.innerHTML = `
         <div  class="">
-        <input class=" flex"  type="text" name="SubName${
+        <input class=" subNames flex"  type="text" name="SubName${
           ChildrenCount + 1
         }" placeholder="Subject ${ChildrenCount + 1}" />
         </div>
@@ -183,9 +183,11 @@ class Ui {
   static RestButton() {
     const restBtn = document.getElementById(`rest`);
     restBtn.onclick = function () {
+      let subNames = document.querySelectorAll(`.subNames`);
       let grades = document.querySelectorAll(`.grades`);
       let credits = document.querySelectorAll(`.credits`);
       for (let i = 0; i < grades.length; i++) {
+        subNames[i].value = "";
         grades[i].value = "";
         credits[i].value = "";
       }
