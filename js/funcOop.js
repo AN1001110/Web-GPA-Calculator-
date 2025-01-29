@@ -80,25 +80,25 @@ class GradesAndGPAcalc {
     if (this.GPA > 4 || this.GPA < 0) {
       this.Grade = "wrong";
     } else if (this.GPA == 4) {
-      this.Grade = "A+";
+      this.Grade = "+A";
     } else if (this.GPA >= 3.7) {
       this.Grade = "A";
     } else if (this.GPA >= 3.4) {
-      this.Grade = "A-";
+      this.Grade = "-A";
     } else if (this.GPA >= 3) {
-      this.Grade = "B+";
+      this.Grade = "+B";
     } else if (this.GPA >= 2.7) {
       this.Grade = "B";
     } else if (this.GPA >= 2.3) {
-      this.Grade = "C+";
+      this.Grade = "+C";
     } else if (this.GPA >= 2) {
       this.Grade = "C";
     } else if (this.GPA >= 1.7) {
-      this.Grade = "D+";
+      this.Grade = "+D";
     } else if (this.GPA >= 1.3) {
       this.Grade = "D";
     } else if (this.GPA >= 1) {
-      this.Grade = "D-";
+      this.Grade = "-D";
     } else if (this.GPA <= 0) {
       this.Grade = "F";
     }
@@ -108,36 +108,36 @@ class Ui {
   static createElement() {
     let ChildrenCount = GradesAndCreditsDiv.children.length;
     let element = document.createElement("div");
-    element.className = `filed`;
+    element.className = `field`;
     element.id = `sub${ChildrenCount + 1}`;
     element.innerHTML = `
-        <div  class="">
-        <input class=" subNames flex"  type="text" name="SubName${
-          ChildrenCount + 1
-        }" placeholder="Subject ${ChildrenCount + 1}" />
-        </div>
         
-        <div  class="full-width">
+        <input class=" subNames "  type="text" name="SubName${
+          ChildrenCount + 1
+        }" placeholder="المادة ${ChildrenCount + 1}" />
+      
+        
+        <div  class="gradesField">
         <input
-        class="two-width grades  flex"
+        class="grades"
         type="number"
         name="Grade${ChildrenCount + 1}"
         min="0"
                 max="100"
                 required
-                placeholder=" Grade ${ChildrenCount + 1}"
+                placeholder=" الدرجة "
                 
               />
 
               <input
-                class="two-width credits  "
+                class=" credits  "
                 type="number"
                 name="credit${ChildrenCount + 1}"
                 min="0"
                 max="10"
                 required
               
-                placeholder="Credit ${ChildrenCount + 1}"/>
+                placeholder="الساعة معتمدة "/>
                 </div>
                 `;
     GradesAndCreditsDiv.appendChild(element);
@@ -146,10 +146,11 @@ class Ui {
   static handleUi(calc) {
     function ShowResults() {
       if (calc.state) {
-        let result = document.getElementById("result");
-        result.innerHTML = `<div>Percentage: %${calc.Percentage}</div>
-        <div>Grade: ${calc.Grade}</div>
-        <div>GPA: ${calc.GPA}</div>`;
+        let resultStyle = document.querySelectorAll(".resultStyle");
+
+        resultStyle[0].innerHTML = calc.Percentage;
+        resultStyle[1].innerHTML = calc.Grade;
+        resultStyle[2].innerHTML = calc.GPA;
       }
     }
     const calcBtn = document.querySelector(`#calc`);
@@ -167,7 +168,7 @@ class Ui {
   }
   static AddAndDeleteSubject() {
     let GradesAndCreditsDiv = document.getElementById("GradesAndCreditsDiv");
-    let AddBtn = document.getElementById("add");
+    let AddBtn = document.getElementById("addSub");
     let DeleteBtn = document.getElementById("delete");
     AddBtn.onclick = function () {
       if (GradesAndCreditsDiv.children.length < 20) {
@@ -183,6 +184,7 @@ class Ui {
   static RestButton() {
     const restBtn = document.getElementById(`rest`);
     restBtn.onclick = function () {
+      let resultStyle = document.querySelectorAll(".resultStyle");
       let subNames = document.querySelectorAll(`.subNames`);
       let grades = document.querySelectorAll(`.grades`);
       let credits = document.querySelectorAll(`.credits`);
@@ -191,8 +193,11 @@ class Ui {
         grades[i].value = "";
         credits[i].value = "";
       }
-      let result = document.getElementById("result");
-      result.innerHTML = "";
+
+      for (let i = 0; i < resultStyle.length; i++) {
+        console.log(resultStyle[i]);
+        resultStyle[i].innerHTML = "0";
+      }
     };
   }
   static preventFormSubmission() {

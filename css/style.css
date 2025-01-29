@@ -11,10 +11,26 @@
   --headColor3: #078c03;
   --footColor1: #059212;
   --footColor2: #9bec00;
-  --inputPadding :20px;
+  --textColor1: #159702;
+  --mainMarginOrPadding: 20px;
+  --backgroundMainColor: #7de76c;
+  --backgroundMainColor2: #1fbd2c;
+  --sectionColor1: #1fbd2c;
+  --sectionColor2: #56ab2f;
+  --sectionColor3: #a8e063;
+  --animationSection1Color2: #39ff14;
+  --animationSection1Color1: #32cd32;
+  --animationSection1Color3: #055902;
+  --headTextColor: #ffd700;
+}
+body {
+  background-color: var(--backgroundMainColor);
+  color: white;
 }
 
 header .container {
+  z-index: 1;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   padding: 15px;
@@ -24,19 +40,17 @@ header .container {
     var(--headColor2) 60%,
     var(--headColor3) 100%
   );
-
   align-items: center;
   height: 40px;
   width: 100%;
   background-size: cover;
   background-attachment: fixed;
   overflow: visible;
+  margin-bottom: var(--mainMarginOrPadding);
 }
 .logo {
   width: 30px;
   height: 30px;
-}
-@media (max-width: 667px) {
 }
 header .container .bar1 {
   display: none;
@@ -46,11 +60,9 @@ header .list {
   right: -15px;
   top: 0;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   height: 30px;
   align-items: center;
-  border-bottom-left-radius: 10px;
 }
 .list li a {
   display: flex;
@@ -61,97 +73,295 @@ header .list {
   color: white;
   font-size: 12px;
   font-weight: bold;
-  margin-left: 10vw;
+  margin-left: 16vh;
 }
+
 .list li a span {
   margin-left: 5px;
 }
-/* start section */
-section {
+@media (max-width: 667px) {
+}
+/* start section1 */
+.section1 .container .backAnimation {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-right: 5%;
+  padding-left: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  animation-name: linearGradient;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  animation-delay: 0s;
+  animation-duration: 10s;
+  background: linear-gradient(
+    45deg,
+    var(--animationSection1Color1) 16%,
+    var(--animationSection1Color2) 32%,
+    var(--animationSection1Color3) 50%,
+    var(--animationSection1Color2) 82%,
+    var(--animationSection1Color1) 100%
+  );
+  background-size: 200% 200%;
+}
+.section1 .container .backAnimation .mainIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--mainMarginOrPadding);
+  background-image: linear-gradient(
+    45deg,
+    var(--sectionColor1) 33%,
+    var(--sectionColor2) 66%,
+    var(--sectionColor3) 100%
+  );
+
+  margin-top: var(--mainMarginOrPadding);
+  margin-bottom: var(--mainMarginOrPadding);
+  height: fit-content;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.section1 .container div h1 {
+  margin-bottom: var(--mainMarginOrPadding);
+  color: var(--headTextColor);
+}
+.section1 .container div p {
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.7;
+}
+/* Start animation for section */
+@keyframes linearGradient {
+  0% {
+    background-position: 100% -100%;
+  }
+
+  100% {
+    background-position: -100% 100%;
+  }
+}
+.section1 .container .backAnimation .sectionIcons {
+  display: flex;
+  border-radius: var(--mainMarginOrPadding);
+  -webkit-border-radius: var(--mainMarginOrPadding);
+  -moz-border-radius: var(--mainMarginOrPadding);
+  -ms-border-radius: var(--mainMarginOrPadding);
+  -o-border-radius: var(--mainMarginOrPadding);
+}
+.section1 .container .backAnimation .sectionIcons div {
+  display: flex;
+  flex-direction: column;
+  line-height: 2;
+  text-align: center;
+  margin: var(--mainMarginOrPadding);
+}
+.section1 .container .backAnimation .sectionIcons div h2 {
+  font-weight: bold;
+  font-size: 2em;
+}
+.section1 .container .backAnimation .sectionIcons div p {
+  font-size: 1.2em;
+}
+
+/* End animation for section */
+/* end section1 */
+/* Start section2 */
+
+.section2 .container .section2BackGround {
   background-image: url("../images/mainBackground.jpg");
   background-size: cover;
+  padding: var(--mainMarginOrPadding);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
-section .container {
-  height: 100vh;
+.section2 .container .section2BackGround #GradesAndCreditsDiv {
+  padding: var(--mainMarginOrPadding);
 }
-section .container form {
+.section2 .container .section2BackGround #GradesAndCreditsDiv .field {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 10px;
-  height: fit-content;
-  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.section2 .container .section2BackGround #GradesAndCreditsDiv .field .subNames {
+  margin-bottom: 10px;
+  width: 60%;
+  height: 30px;
 }
 
-section .container form input:focus {
+#GradesAndCreditsDiv .field .gradesField {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  height: 25px;
+}
+#GradesAndCreditsDiv .field .gradesField .grades,
+.gradesField .credits {
+  width: calc(100% / 2 - 3px);
+}
+input {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid var(--animationSection1Color1);
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  color: var(--backgroundMainColor2);
+}
+
+input::grammar-error {
+  color: #078c03;
+}
+input::placeholder {
+  color: var(--animationSection1Color1);
+  background-color: #f7f7f7;
+}
+input:focus {
   outline: none;
 }
-section .container input {
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-  outline: none;
-  border:solid  var(--headColor3) 2px ;
+.btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-section .container input[type="number"] {
-  padding-top: var(--inputPadding);
-  padding-bottom:var(--inputPadding) ;
-  margin-bottom: 2px;
-  height: 20px;
-  width: calc(50% - 5px);
-  padding: 10px;
-}
-section .container input[type="text"] {
-  width: 100%;
-  height: 30px;
-  margin-bottom: 2px;
-}
-section .container input[type="button"]{
-  padding: 10px;
+input[type="button"] {
+  padding: 20px;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
   border: none;
 }
-
-#GradesAndCreditsDiv{
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-#calc{
-  background-color: #FF8C42;
+#calc {
   color: white;
+  background: linear-gradient(
+    45deg,
+    var(--animationSection1Color2) 5%,
+    var(--backgroundMainColor2) 100%
+  );
 }
-/* end section */
+#addSub {
+  color: white;
+  background: linear-gradient(
+    45deg,
+    hsl(234, 78%, 78%) 5%,
+    hsl(234, 100%, 67%) 100%
+  );
+}
+#delete {
+  color: white;
+  background: linear-gradient(45deg, red 5%, darkred 100%);
+}
+#rest {
+  color: white;
+  background: linear-gradient(45deg, orange 5%, darkorange 100%);
+}
+.title {
+  padding: var(--mainMarginOrPadding);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: -30px;
+}
+.title h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+}
+#result {
+  min-height: 200px;
+  padding: var(--mainMarginOrPadding);
+  padding-top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.resultStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background: #f0f8ff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  color: var(--animationSection1Color1);
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+/* end section2 */
+/* Start section3 */
 
-/* start framework */
-.filed {
+.section3 .container {
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
-  flex-wrap: nowrap;
+  padding: var(--mainMarginOrPadding);
+  background: linear-gradient( 45deg,
+  var(--animationSection1Color3) 20%,
+  var(--animationSection1Color1) 80%,
+  var(--animationSection1Color2) 100%
+  );
+padding: var(--mainMarginOrPadding);
 }
-.column {
-  flex-direction: column;
+
+.section3 .container h2 ,.section3 .container h3  ,.section3 .container p {
+margin-bottom: 30px;
+
+
 }
-.two-width {
-  width: calc(100% / 2 );
+.section3 .container p {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.7;
 }
-.full-width {
-  width: 100%;
+.section3 .container  ol  {
+  
+  padding: var(--mainMarginOrPadding);
+  font-weight: bold;
+  line-height: 2;
+  font-size: 18px;
 }
-.grow {
-  flex-grow: 1;
+.section3 .container  ol li {
+ margin-bottom: 20px;
 }
-/* end frame work */
+.section3 .container{
+  font-weight: 700;
+}
+
+/* end section3 */
+
 /* start copyright */
 footer {
   background-image: linear-gradient(
     45deg,
-    var(--footColor1),
-    var(--footColor2)
+    var(--animationSection1Color2),
+    var(--footColor1)
   );
   color: white;
   display: flex;
