@@ -171,7 +171,7 @@ class Ui {
     let AddBtn = document.getElementById("addSub");
     let DeleteBtn = document.getElementById("delete");
     AddBtn.onclick = function () {
-      if (GradesAndCreditsDiv.children.length < 20) {
+      if (GradesAndCreditsDiv.children.length < 30) {
         Ui.createElement();
       }
     };
